@@ -14,7 +14,7 @@
 /////For processing one folders/////
 //Choose the directory containing your .lif file//
 dir = getDirectory("Choose a directory")
-//setBatchMode(true);
+setBatchMode(true);
 list = getFileList(dir);
 
 //Find .lif experiment//
@@ -36,6 +36,7 @@ for (FileInd=0; FileInd<list.length; FileInd++){
 			Shortname = replace(preshortname, "- ", "");
 			print(f, Shortname);
 			rename(Shortname);
+			print (Shortname);
 			if (Stack.isHyperstack){
 				print("Hyperstack!!!");
 				Stack.getDimensions(w, h, C, slices, frames);
@@ -58,7 +59,8 @@ for (FileInd=0; FileInd<list.length; FileInd++){
 					print("Color coding time serie"+list3[j]);
 					//run("Temporal-Color Code", "lut=Fire start=[] end=[] batch");
 					run("Temporal-Color Code", "lut=Fire start=[] end=[]");
-				}
+				};
+			};
 				
 		};
 		//Create and save montage
@@ -66,7 +68,10 @@ for (FileInd=0; FileInd<list.length; FileInd++){
 			saveAs("Tiff", dir+File.separator+ShortFileName);
 		} else {
 			run("Images to Stack", "name=Stack title=[] use");
-			run("Make Montage...", "columns=[] rows=[] scale=0.25 label use");
+			Stack.getDimensions(w, h, C, slices, frames);
+			print(slices);
+			rows_nb = ((slices/3)+1);
+			run("Make Montage...", "columns=[3] rows=[rows_nb] scale=0.25 label use");
 			saveAs("Tiff", dir+File.separator+ShortFileName);
 		};
 		run("Close All");

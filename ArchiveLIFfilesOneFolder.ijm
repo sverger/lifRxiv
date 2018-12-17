@@ -48,8 +48,8 @@ for (FileInd=0; FileInd<list.length; FileInd++){
 					selectWindow("MAX_"+Shortname);
 					print("MAX_"+Shortname);
 					print("Color coding Hyperstack"+list3[j]);
-					//run("Temporal-Color Code", "lut=Fire start=[] end=[] batch");
-					run("Temporal-Color Code", "lut=Fire start=[] end=[]");
+					run("Temporal-Color Code", "lut=Fire start=[0] end=[frames] batch");
+					//run("Temporal-Color Code", "lut=Fire start=[] end=[]");
 				
 				}else if (slices>1){
 					print("Z-Projecting"+list3[j]);
@@ -57,8 +57,8 @@ for (FileInd=0; FileInd<list.length; FileInd++){
 					
 				}else if (frames>1){
 					print("Color coding time serie"+list3[j]);
-					//run("Temporal-Color Code", "lut=Fire start=[] end=[] batch");
-					run("Temporal-Color Code", "lut=Fire start=[] end=[]");
+					run("Temporal-Color Code", "lut=Fire start=[0] end=[frames] batch");
+					//run("Temporal-Color Code", "lut=Fire start=[] end=[]");
 				};
 			};
 				

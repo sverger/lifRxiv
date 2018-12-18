@@ -4,12 +4,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Before running the macro put .lif files in a folder that you will select at the begining when running the macro// 
-//This macro will create 2 files named as you .lif file:
-//	- A .txt file with the liste of all the images contained in the .lif file
-//	- A .tiff file containing a mosaic of all the images contained in the .lif file.
+//This macro will create 2 files named as your .lif file:
+//	- A .txt file with the list of all the images contained in the .lif file
+//	- A .tif file containing a mosaic of all the images contained in the .lif file.
 //		- In case of a Z-Stack the stack is "max-intensity-projected"
 //		- In case of a time serie, the stack is "color coded projected"
-//		- In case of a hyperstack Z-stack/time serie, the stack is first "Z-projected" and the "color code projected"
+//		- In case of a hyperstack Z-stack/time serie, the stack is first "Z-projected" and then "color code projected"
 
 /////For processing one folders/////
 //Choose the directory containing your .lif file//
